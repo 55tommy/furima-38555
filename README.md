@@ -2,37 +2,38 @@
 
 ##　usersテーブル
 
-| Column             | Type   | Options                   |
-| ------------------ | ------ | --------------------------|
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-| nickname           | string | null: false               |
-| first_name         | string | null: false               |
-| last_name          | string | null: false               |
-| first_name_kana	   | string | null: false               |
-| last_name_kana     | string | null: false               |
-| birthday           | date   | null: false               |
+| Column             | Type    | Options                   |
+| ------------------ | ------- | --------------------------|
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| nickname           | string  | null: false               |
+| first_name         | string  | null: false               |
+| last_name          | string  | null: false               |
+| first_name_kana	   | string  | null: false               |
+| last_name_kana     | string  | null: false               |
+| birth_year_id      | integer | null: false               |
+| birth_month_id     | integer | null: false               |
+| birth_day_id       | integer | null: false               |
+
 
 ###Association
 
 - has_many : items
 - has_many : purchases_informations
- 
-
 
 ## itemsテーブル
 
-| Column            | Type       | Options                       |
-| ------------------| -----------| ----------------------------- |
-| 1.product_name    | string     | null: false                   |
-| 2.description     | string     | null: false                   |
-| 3.category        | string     | null: false                   |
-| 4.condition       | string     | null: false                   |
-| 5.price           | integer    | null: false                   |
-| 6.delivery-charge | integer    | null: false                   |
-| 7.ship_from       | string     | null: false                   |
-| 8.delivery_period | integer    | null: false                   |
-| 9.user            | references | null: false,foreign_key: true | 
+| Column             | Type       | Options                       |
+| -------------------| -----------| ----------------------------- |
+| product_name       | string     | null: false                   |
+| description        | text       | null: false                   |
+| category_id        | integer    | null: false                   |
+| condition_id       | integer    | null: false                   |
+| price              | integer    | null: false                   |
+| delivery_charge    | integer    | null: false                   |
+| ship_from_id       | integer    | null: false                   |
+| delivery_period_id | integer    | null: false                   |
+| user               | references | null: false,foreign_key: true | 
 ※imageはActiveStorageで実装する
 
 ###Association
@@ -59,6 +60,12 @@
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
 | purchases_information | references | null: false,foreign_key: true  |
+| post_code             | string     | null: false |
+| prefecture_id         | integer    | null: false |
+| city                  | string     | null: false |
+| house_number          | string     | null: false |
+| building_name         | string     |                                |
+| phone_number          | string     | null: false |
 
 ###Association
 
