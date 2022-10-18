@@ -11,10 +11,7 @@
 | last_name          | string  | null: false               |
 | first_name_kana	   | string  | null: false               |
 | last_name_kana     | string  | null: false               |
-| birth_year_id      | integer | null: false               |
-| birth_month_id     | integer | null: false               |
-| birth_day_id       | integer | null: false               |
-
+| birthday           | date    | null: false               |
 
 ###Association
 
@@ -31,7 +28,7 @@
 | condition_id       | integer    | null: false                   |
 | price              | integer    | null: false                   |
 | delivery_charge    | integer    | null: false                   |
-| ship_from_id       | integer    | null: false                   |
+| prefecture_id      | integer    | null: false                   |
 | delivery_period_id | integer    | null: false                   |
 | user               | references | null: false,foreign_key: true | 
 ※imageはActiveStorageで実装する
@@ -60,12 +57,12 @@
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
 | purchases_information | references | null: false,foreign_key: true  |
-| post_code             | string     | null: false |
-| prefecture_id         | integer    | null: false |
-| city                  | string     | null: false |
-| house_number          | string     | null: false |
+| post_code             | string     | null: false                    |
+| prefecture_id         | integer    | null: false                    |
+| city                  | string     | null: false                    |
+| house_number          | string     | null: false                    |
 | building_name         | string     |                                |
-| phone_number          | string     | null: false |
+| phone_number          | string     | null: false                    |
 
 ###Association
 
