@@ -1,24 +1,69 @@
-# README
+# Frima38555 テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##　usersテーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                   |
+| ------------------ | ------- | --------------------------|
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| nickname           | string  | null: false               |
+| first_name         | string  | null: false               |
+| last_name          | string  | null: false               |
+| first_name_kana	   | string  | null: false               |
+| last_name_kana     | string  | null: false               |
+| birthday           | date    | null: false               |
 
-* Ruby version
+###Association
 
-* System dependencies
+- has_many : items
+- has_many : purchases_informations
 
-* Configuration
+## itemsテーブル
 
-* Database creation
+| Column             | Type       | Options                       |
+| -------------------| -----------| ----------------------------- |
+| product_name       | string     | null: false                   |
+| description        | text       | null: false                   |
+| category_id        | integer    | null: false                   |
+| condition_id       | integer    | null: false                   |
+| price              | integer    | null: false                   |
+| delivery_charge    | integer    | null: false                   |
+| prefecture_id      | integer    | null: false                   |
+| delivery_period_id | integer    | null: false                   |
+| user               | references | null: false,foreign_key: true | 
+※imageはActiveStorageで実装する
 
-* Database initialization
+###Association
 
-* How to run the test suite
+- belongs_to :user(出品者)
+- has_one: purchases_information
 
-* Services (job queues, cache servers, search engines, etc.)
+## purchases_informationsテーブル
 
-* Deployment instructions
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false,foreign_key: true  |
+| item    | references | null: false, foreign_key: true |
 
-* ...
+###Association
+
+- belongs_to : item
+- belongs_to :user(購入者)
+- has_one: address
+
+
+## addressesテーブル
+
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| purchases_information | references | null: false,foreign_key: true  |
+| post_code             | string     | null: false                    |
+| prefecture_id         | integer    | null: false                    |
+| city                  | string     | null: false                    |
+| house_number          | string     | null: false                    |
+| building_name         | string     |                                |
+| phone_number          | string     | null: false                    |
+
+###Association
+
+- belongs_to :purchases_information
