@@ -42,8 +42,8 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
       it "passwordが6文字以下だと登録できない" do
-        @user.password = '12345'
-        @user.password_confirmation = '00000'
+        @user.password = '1234a'
+        @user.password_confirmation = '1234a'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
