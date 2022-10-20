@@ -36,7 +36,8 @@
 ###Association
 
 - belongs_to :user(出品者)
-- has_one: purchases_information
+- has_one :purchases_information
+- has_one :image
 
 #extend ActiveHash::Associations::ActiveRecordExtensions
 - belongs_to :category 
