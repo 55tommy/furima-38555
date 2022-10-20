@@ -42,6 +42,7 @@
 - belongs_to :category 
 - belongs_to :condition 
 - belongs_to :delivery_charge
+- belongs_to :delivery_period
 
 
 ## purchases_informationsテーブル
