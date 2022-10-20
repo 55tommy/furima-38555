@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
-  def new #出品投稿
+  def new 
     @item = Item.new
   end
 
-  def create #出品保存
+  def create 
     @item = Item.create(item_params)
     if @item.save
       redirect_to root_path
