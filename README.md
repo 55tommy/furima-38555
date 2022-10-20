@@ -38,6 +38,9 @@
 - belongs_to :user(出品者)
 - has_one: purchases_information
 
+-  belongs_to :category (extend ActiveHash::Associations::ActiveRecordExtensions)
+
+
 ## purchases_informationsテーブル
 
 | Column  | Type       | Options                        |
