@@ -23,12 +23,22 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Description can't be blank")
       end
       it 'category_idが空では保存できない' do
-        @item.category = nil
+        @item.category_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category can't be blank")
+      end
+      it 'category_idが「---」では保存できない' do
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it 'condition_idが空では保存できない' do
-        @item.condition = nil
+        @item.condition_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
+      end
+      it 'condition_idが「---」では保存できない' do
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
@@ -42,13 +52,28 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery charge can't be blank")
       end
+      it 'delivery_charge_idが「---」では保存できない' do
+        @item.delivery_charge_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery charge can't be blank")
+      end
       it 'prefecture_idが空では保存できない' do
         @item.prefecture_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
-      it 'delivery_period_id,が空では保存できない' do
+      it 'prefecture_idが「---」では保存できない' do
+        @item.prefecture_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+      end
+      it 'delivery_period_idが空では保存できない' do
         @item.delivery_period_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery period can't be blank")
+      end
+      it 'delivery_period_idが「---」では保存できない' do
+        @item.delivery_period_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery period can't be blank")
       end
@@ -79,6 +104,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price is not a number")
       end
     end
+
   end
 
 end
