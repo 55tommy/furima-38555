@@ -27,7 +27,7 @@
 | category_id        | integer    | null: false                   |
 | condition_id       | integer    | null: false                   |
 | price              | integer    | null: false                   |
-| delivery_charge    | integer    | null: false                   |
+| delivery_charge_id | integer    | null: false                   |
 | prefecture_id      | integer    | null: false                   |
 | delivery_period_id | integer    | null: false                   |
 | user               | references | null: false,foreign_key: true | 
@@ -36,7 +36,16 @@
 ###Association
 
 - belongs_to :user(出品者)
-- has_one: purchases_information
+- has_one :purchases_information
+- has_one :image
+
+#extend ActiveHash::Associations::ActiveRecordExtensions
+- belongs_to :category 
+- belongs_to :condition 
+- belongs_to :delivery_charge
+- belongs_to :delivery_period
+- belongs_to :prefecture
+
 
 ## purchases_informationsテーブル
 
