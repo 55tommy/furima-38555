@@ -16,7 +16,7 @@
 ###Association
 
 - has_many : items
-- has_many : purchases_informations
+- has_many : purchases
 
 ## itemsテーブル
 
@@ -36,7 +36,7 @@
 ###Association
 
 - belongs_to :user(出品者)
-- has_one :purchases_information
+- has_one :purchases
 - has_one :image
 
 #extend ActiveHash::Associations::ActiveRecordExtensions
@@ -47,7 +47,7 @@
 - belongs_to :prefecture
 
 
-## purchases_informationsテーブル
+## purchasesテーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
@@ -65,7 +65,7 @@
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
-| purchases_information | references | null: false,foreign_key: true  |
+| purchases             | references | null: false,foreign_key: true  |
 | post_code             | string     | null: false                    |
 | prefecture_id         | integer    | null: false                    |
 | city                  | string     | null: false                    |
@@ -75,4 +75,4 @@
 
 ###Association
 
-- belongs_to :purchases_information
+- belongs_to :purchases
