@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="Rhl-_fb9QwhdmEWkUN4t" name="ページ1">
-        <mxGraphModel dx="728" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="691" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -85,7 +85,7 @@
                 <mxCell id="B5fo10EpVCKoiSzT6OUC-28" value="addresses" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="410" y="554" width="160" height="176" as="geometry"/>
                 </mxCell>
-                <mxCell id="B5fo10EpVCKoiSzT6OUC-45" value="&lt;font style=&quot;font-size: 12px&quot;&gt;has_one:&amp;nbsp;purchases&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                <mxCell id="B5fo10EpVCKoiSzT6OUC-45" value="&lt;font style=&quot;font-size: 12px&quot;&gt;has_one:&amp;nbsp;purchase&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="470" y="430" width="120" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="B5fo10EpVCKoiSzT6OUC-46" value="has_many : items" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
@@ -117,7 +117,7 @@
                 <mxCell id="isKKuYXZQaSdqTFcjRob-7" value="belongs_to : item" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">
                     <mxGeometry x="90" y="680" width="100" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="isKKuYXZQaSdqTFcjRob-9" value="belongs_to :&amp;nbsp;&lt;font style=&quot;font-size: 12px&quot;&gt;purchases&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">
+                <mxCell id="isKKuYXZQaSdqTFcjRob-9" value="belongs_to :&amp;nbsp;&lt;font style=&quot;font-size: 12px&quot;&gt;purchase&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">
                     <mxGeometry x="437" y="760" width="130" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="isKKuYXZQaSdqTFcjRob-37" value="&lt;font style=&quot;font-size: 11px&quot;&gt;has_many :&amp;nbsp;purchases&lt;br&gt;&lt;/font&gt;&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">

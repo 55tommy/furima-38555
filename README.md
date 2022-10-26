@@ -36,7 +36,7 @@
 ###Association
 
 - belongs_to :user(出品者)
-- has_one :purchases
+- has_one :purchase
 - has_one :image
 
 #extend ActiveHash::Associations::ActiveRecordExtensions
@@ -65,7 +65,7 @@
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
-| purchases             | references | null: false,foreign_key: true  |
+| purchase              | references | null: false,foreign_key: true  |
 | post_code             | string     | null: false                    |
 | prefecture_id         | integer    | null: false                    |
 | city                  | string     | null: false                    |
@@ -75,4 +75,4 @@
 
 ###Association
 
-- belongs_to :purchases
+- belongs_to :purchase
