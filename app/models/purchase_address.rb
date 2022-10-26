@@ -10,13 +10,13 @@ class PurchaseAddress
     validates :phone_number, format: {with: /\d{10,11}/ }
     validates :user_id
     validates :item_id
-    validates :purchase_id
+
   end
 
   def save
     #各情報をカラムへ保存して、変数に代入する
     purchase = Purchase.create(user_id: user_id, item_id: item_id )
-    Address.create(post_code: post_code, prefecture_id: prefecture_id, city: city, house_number: house_number, phone_number: phone_number, purchase_id: purchase_id, building_name: building_name)
+    address = Address.create(post_code: post_code, prefecture_id: prefecture_id, city: city, house_number: house_number, phone_number: phone_number, purchase_id: purchase_id, building_name: building_name)
   end
 end
 
