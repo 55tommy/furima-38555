@@ -10,11 +10,11 @@ class Item < ApplicationRecord
   has_one_attached :image
   has_one :purchase
 
-  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }, presence: true
-  validates :condition_id, numericality: { other_than: 1, message: "can't be blank" }, presence: true
-  validates :delivery_charge_id, numericality: { other_than: 1, message: "can't be blank" }, presence: true
-  validates :delivery_period_id, numericality: { other_than: 1, message: "can't be blank" }, presence: true
-  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }, presence: true
+  validates :category_id, numericality: { other_than: 1, message: "を選択して下さい" }, presence: true
+  validates :condition_id, numericality: { other_than: 1, message: "を選択して下さい" }, presence: true
+  validates :delivery_charge_id, numericality: { other_than: 1, message: "を選択して下さい" }, presence: true
+  validates :delivery_period_id, numericality: { other_than: 1, message: "を選択して下さい" }, presence: true
+  validates :prefecture_id, numericality: { other_than: 1, message: "を選択して下さい" }, presence: true
   
   validates :product_name, presence: true
   validates :description, presence: true
